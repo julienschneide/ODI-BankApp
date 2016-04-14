@@ -8,6 +8,7 @@ package ch.hearc.ig.odi.bankapp.business;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -55,6 +56,8 @@ public class Bank {
         return r_customer;
     }
     
+    
+    
     public void addCompany(String phone, String fax, int number, String companyName){
         customers.add(new Company(phone,fax,number,companyName));
     }
@@ -67,6 +70,16 @@ public class Bank {
         Account n_account = new Account(number,name,rate,customer);
         accounts.add(n_account);
         customer.addAccount(n_account);
+    }
+
+    public Customer addCustomer(int i, String firstname, String lastname) {
+        Customer temp = new Customer(i, firstname, lastname);
+        customers.add(temp);
+        return temp;
+    }
+
+    public List getCustomers() {
+        return customers;
     }
     
 }

@@ -6,16 +6,24 @@ package ch.hearc.ig.odi.bankapp.business;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public abstract class Customer {
+public class Customer {
 
 	private int number;
+        private String firstname;
+        private String lastname;
         private List<Account> accounts;
 	/**
 	 * 
 	 * @param number
 	 */
-	public Customer(int number) {
+	public Customer(int number,String firstname, String lastname) {
+            this.number = number;
+            this.firstname = firstname;
+            this.lastname = lastname;
+            accounts = new ArrayList();
+	}
+       
+        public Customer(int number) {
             this.number = number;
             accounts = new ArrayList();
 	}
