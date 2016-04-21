@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package ch.hearc.ig.odi.bankapp.presentation;
+package ch.hearc.ig.odi.bankapp.beans;
 
 import ch.hearc.ig.odi.bankapp.business.Customer;
 import ch.hearc.ig.odi.bankapp.services.Services;

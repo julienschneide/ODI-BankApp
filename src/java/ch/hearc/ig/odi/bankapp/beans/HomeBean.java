@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package ch.hearc.ig.odi.bankapp.presentation;
+package ch.hearc.ig.odi.bankapp.beans;
 
 import java.util.Locale;
 import javax.faces.bean.ManagedBean;

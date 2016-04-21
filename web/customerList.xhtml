@@ -24,6 +24,13 @@
                     <f:facet name="header">Nom</f:facet>
                     <h:outputText value="#{cust.lastname}" />
                 </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandButton value="Détails" action="customerDetails">
+                            <f:actionListener binding="#{CustomerDetailsBean.setCustomer(cust)}" />
+                        </h:commandButton>
+                    </h:form>
+                </h:column>
             </h:dataTable>
             <h:form>
                 <h:commandButton value="Ajouter un client" action="addCustomer" />
