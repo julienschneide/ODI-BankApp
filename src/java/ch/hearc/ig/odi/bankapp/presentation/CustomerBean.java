@@ -11,32 +11,26 @@ import ch.hearc.ig.odi.bankapp.services.Services;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author Julien Schneider <julien.schneider@he-arc.ch>
  */
-@ManagedBean(name = "cList")
+
+@ManagedBean(name = "customerBean")
+//@Named
 @RequestScoped
 public class CustomerBean {
     
-    private List<Customer> customers = new Services().getCustomers();
+    @Inject Services services;
 
-    /**
-     * Creates a new instance of CustomerBean
-     */
     public CustomerBean() {
              
     }
-
     public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
-    }
-
-    
+        return services.getCustomersList();
+    }    
     
 }

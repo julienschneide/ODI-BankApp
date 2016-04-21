@@ -6,17 +6,26 @@
         <title>Ajouter un client</title>
     </h:head>
     <h:body>
-        <h:outputLabel value="#{msg['label.titre.ajouterClient']}"></h:outputLabel>
-        
-        <h1>Ajout d'un client</h1>
+        <h1><h:outputLabel value="#{msg['label.titre.ajouterClient']}"></h:outputLabel></h1>
+
         <h:form>
-            N° du client : <h:inputText></h:inputText><h:outputText value="&lt;br/&gt;" escape="false"/>
-            Prénom : <h:inputText></h:inputText><h:outputText value="&lt;br/&gt;" escape="false"/>
-            Nom : <h:inputText></h:inputText><h:outputText value="&lt;br/&gt;" escape="false"/>
-            <!--Date de naissance: <h:inputText></h:inputText><h:outputText value="&lt;br/&gt;" escape="false"/>
-            E-mail : <h:inputText></h:inputText><h:outputText value="&lt;br/&gt;" escape="false"/>-->
-            <h:commandButton type="submit" value="Ajouter le client"></h:commandButton>
+            <h:outputLabel value="Numéro : " for="number" />
+            <h:inputText id="numero" required="true" requiredMessage="Le numéro est obligatoire" value="#{AClient.number}" /><br />
+            
+            <h:outputLabel value="Prénom : " for="firstname" />
+            <h:inputText id="firstname" required="true" requiredMessage="Le prénom est obligatoire" value="#{AClient.firstname}" /><br />
+            
+            <h:outputLabel value="Nom : " for="lastname" />
+            <h:inputText id="lastname" required="true" requiredMessage="Le nom est obligatoire" value="#{AClient.lastname}" /><br />
+            
+            <h:commandButton type="reset" value="Réinitialiser" />      <h:commandButton action="#{AClient.ajouterClient()}" value="Ajouter" /> <br />
+            
         </h:form>
+        
+           
+        <h:button value="Annuler" outcome="customerList" /> <br />
+
+
     </h:body>
 </html>
 

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Liste des clients</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,11 +11,23 @@ and open the template in the editor.
     <h:body>
         <h1>Liste des clients</h1>
         <div>
-            <h:dataTable id="CustomerList" value ="#{cList.customers}" var="c">
+            <h:dataTable id="CustomerList" value ="#{customerBean.customers}" var="cust">
                 <h:column>
-                    #{c.firstname}
+                    <f:facet name="header">Numéro</f:facet>
+                    <h:outputText value="#{cust.number}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Prénom</f:facet>
+                    <h:outputText value="#{cust.firstname}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nom</f:facet>
+                    <h:outputText value="#{cust.lastname}" />
                 </h:column>
             </h:dataTable>
+            <h:form>
+                <h:commandButton value="Ajouter un client" action="addCustomer" />
+            </h:form>
         </div>
     </h:body>
 </html>
